@@ -10,6 +10,18 @@ export default defineConfig({
       name: 'FortressPluginDate',
       fileName: format => format === 'es' ? 'index.js' : `index.${format}.js`,
     },
+    rollupOptions: {
+      external: [
+        'dayjs',
+        'dayjs/plugin/customParseFormat',
+      ],
+      output: {
+        globals: {
+          'dayjs': 'dayjs',
+          'dayjs/plugin/customParseFormat': 'customParseFormat',
+        },
+      },
+    },
   },
   resolve: {
     alias: {
