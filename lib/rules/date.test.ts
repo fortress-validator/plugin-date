@@ -2,7 +2,7 @@ import { describe, expect, test } from 'vitest';
 import date from './date';
 
 describe('Rule "date"', () => {
-  const validate = date({ format: 'YYYY-MM-DD', strict: true });
+  const validate = date({ format: 'YYYY-MM-DD' });
 
   test('should pass with valid input', () => {
     expect(validate('2024-02-29')).toBe(true);

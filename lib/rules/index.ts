@@ -6,7 +6,7 @@ import date from './date';
 const rules: Rules = {
   after: after as Rule,
   before: before as Rule,
-  date,
+  date: date as Rule,
 };
 
 export default rules;

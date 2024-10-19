@@ -8,12 +8,12 @@ dayjs.extend(customParseFormat);
 
 export interface AfterRuleArguments extends RuleArguments {
   date: string;
-  format?: string;
+  format: string;
   displayFormat?: string;
   strict?: boolean;
 }
 
-const after = ({ date, format, strict }: AfterRuleArguments) => (input: unknown) => {
+const after = ({ date, format, strict = true }: AfterRuleArguments) => (input: unknown) => {
   if (isEmpty(input)) return false;
   if (!validateDate({ format, strict })(date)) throw new Error('Invalid date');
   if (!validateDate({ format, strict })(input)) return false;

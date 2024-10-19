@@ -2,8 +2,8 @@ import { describe, expect, test } from 'vitest';
 import before from './before';
 
 describe('Rule "date"', () => {
-  describe('set to valid date', () => {
-    const validate = before({ date: '2024-02-28', format: 'YYYY-MM-DD', strict: true });
+  describe('set to date which matches the format', () => {
+    const validate = before({ date: '2024-02-28', format: 'YYYY-MM-DD' });
 
     test('should pass with valid input', () => {
       expect(validate('2024-02-27')).toBe(true);
@@ -19,8 +19,8 @@ describe('Rule "date"', () => {
     });
   });
 
-  describe('set to invalid date', () => {
-    const validate = before({ date: '00:00:00' });
+  describe('set to date which does not match the format', () => {
+    const validate = before({ date: '00:00:00', format: 'YYYY-MM-DD' });
 
     test('should throw an error', () => {
       expect(() => validate('2024-02-29')).toThrowError('Invalid date');
