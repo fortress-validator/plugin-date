@@ -20,6 +20,7 @@ const en: Messages = {
     const { format } = args as DateRuleArguments;
     return `The ${field} field must match the ${format} format.`;
   },
+  iso8601: field => `The ${field} field must be a valid ISO 8601 date.`,
 };
 
 export default en;

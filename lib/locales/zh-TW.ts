@@ -17,6 +17,7 @@ const zhTW: Messages = {
     const { format } = args as DateRuleArguments;
     return `此欄位必須符合${format}格式`;
   },
+  iso8601: () => '此欄位必須是有效的 ISO 8601 日期',
 };
 
 export default zhTW;
