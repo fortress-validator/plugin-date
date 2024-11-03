@@ -2,7 +2,7 @@ import { describe, expect, test } from 'vitest';
 import after from './after';
 
 describe('Rule "date"', () => {
-  describe('set to date which matches the format', () => {
+  describe('set to a date which matches the format', () => {
     const validate = after({ date: '2024-02-28', format: 'YYYY-MM-DD' });
 
     test('should pass with valid input', () => {
@@ -19,7 +19,7 @@ describe('Rule "date"', () => {
     });
   });
 
-  describe('set to date which does not match the format', () => {
+  describe('set to a date which does not match the format', () => {
     const validate = after({ date: '2024', format: 'YYYY-MM-DD' });
 
     test('should throw an error', () => {
