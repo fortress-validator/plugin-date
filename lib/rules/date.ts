@@ -1,4 +1,4 @@
-import { RuleArguments } from '@fortress-validator/types';
+import { Rule, RuleArguments } from '@fortress-validator/types';
 import { isEmpty } from '@fortress-validator/utils';
 import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
@@ -10,7 +10,7 @@ export interface DateRuleArguments extends RuleArguments {
   strict?: boolean;
 }
 
-const date = ({ format, strict = true }: DateRuleArguments) => (input: unknown) => {
+const date: Rule<DateRuleArguments> = ({ format, strict = true }) => (input: unknown) => {
   if (isEmpty(input)) return false;
   return dayjs(String(input), format, strict).isValid();
 };

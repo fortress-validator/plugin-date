@@ -1,3 +1,4 @@
+import { Rule } from '@fortress-validator/types';
 import { isEmpty } from '@fortress-validator/utils';
 import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
@@ -5,7 +6,7 @@ import validateDate from './date';
 
 dayjs.extend(customParseFormat);
 
-const iso8601 = () => (input: unknown) => {
+const iso8601: Rule = () => (input: unknown) => {
   if (isEmpty(input)) return false;
   input = String(input).replace(/(\d{2}:\d{2}:\d{2}(?:\.\d{1,3})?)([+-]\d{2}:\d{2})?$/, '$1');
   const formats = [
