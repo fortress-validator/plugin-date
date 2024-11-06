@@ -13,12 +13,12 @@ export default defineConfig({
     rollupOptions: {
       external: [
         'dayjs',
-        'dayjs/plugin/customParseFormat',
+        'dayjs/plugin/customParseFormat.js',
       ],
       output: {
         globals: {
           'dayjs': 'dayjs',
-          'dayjs/plugin/customParseFormat': 'customParseFormat',
+          'dayjs/plugin/customParseFormat.js': 'customParseFormat',
         },
       },
     },

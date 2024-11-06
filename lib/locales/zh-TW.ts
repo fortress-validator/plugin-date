@@ -1,5 +1,5 @@
 import { Messages } from '@fortress-validator/types';
-import dayjs from 'dayjs';
+import dayjs from '~/core/dayjs';
 import { AfterRuleArguments } from '~/rules/after';
 import { BeforeRuleArguments } from '~/rules/before';
 import { DateRuleArguments } from '~/rules/date';

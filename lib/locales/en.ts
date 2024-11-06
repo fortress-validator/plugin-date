@@ -1,11 +1,8 @@
 import { Messages } from '@fortress-validator/types';
-import dayjs from 'dayjs';
-import customParseFormat from 'dayjs/plugin/customParseFormat';
+import dayjs from '~/core/dayjs';
 import { AfterRuleArguments } from '~/rules/after';
 import { BeforeRuleArguments } from '~/rules/before';
 import { DateRuleArguments } from '~/rules/date';
-
-dayjs.extend(customParseFormat);
 
 const en: Messages = {
   after: (field, args) => {

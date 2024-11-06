@@ -1,10 +1,6 @@
 import { Rule } from '@fortress-validator/types';
 import { isEmpty } from '@fortress-validator/utils';
-import dayjs from 'dayjs';
-import customParseFormat from 'dayjs/plugin/customParseFormat';
 import validateDate from './date';
-
-dayjs.extend(customParseFormat);
 
 const iso8601: Rule = () => (input: unknown) => {
   if (isEmpty(input)) return false;

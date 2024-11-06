@@ -1,10 +1,7 @@
 import { Rule, RuleArguments } from '@fortress-validator/types';
 import { isEmpty } from '@fortress-validator/utils';
-import dayjs from 'dayjs';
-import customParseFormat from 'dayjs/plugin/customParseFormat';
+import dayjs from '~/core/dayjs';
 import validateDate from './date';
-
-dayjs.extend(customParseFormat);
 
 export interface AfterRuleArguments extends RuleArguments {
   date: string;
