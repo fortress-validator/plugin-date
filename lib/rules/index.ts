@@ -1,4 +1,4 @@
-import { Rule, Rules } from '@fortress-validator/types';
+import type { Rule, Rules } from '@fortress-validator/types';
 import after from './after';
 import before from './before';
 import date from './date';

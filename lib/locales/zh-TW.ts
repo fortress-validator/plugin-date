@@ -1,8 +1,8 @@
-import { Messages } from '@fortress-validator/types';
+import type { Messages } from '@fortress-validator/types';
 import dayjs from '~/core/dayjs';
-import { AfterRuleArguments } from '~/rules/after';
-import { BeforeRuleArguments } from '~/rules/before';
-import { DateRuleArguments } from '~/rules/date';
+import type { AfterRuleArguments } from '~/rules/after';
+import type { BeforeRuleArguments } from '~/rules/before';
+import type { DateRuleArguments } from '~/rules/date';
 
 const zhTW: Messages = {
   after: (_, args) => {
