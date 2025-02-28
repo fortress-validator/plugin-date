@@ -2,7 +2,7 @@ import type { Rule } from '@fortress-validator/types';
 import { isEmpty } from '@fortress-validator/utils';
 import validateDate from './date';
 
-const iso8601: Rule = () => (input: unknown) => {
+const iso8601Rule: Rule = () => (input: unknown) => {
   if (isEmpty(input)) return false;
   input = String(input).replace(/(\d{2}:\d{2}:\d{2}(?:\.\d{1,3})?)([+-]\d{2}:\d{2})?$/, '$1');
   const formats = [
@@ -14,4 +14,4 @@ const iso8601: Rule = () => (input: unknown) => {
   return formats.some(format => validateDate({ format })(input));
 };
 
-export default iso8601;
+export default iso8601Rule;

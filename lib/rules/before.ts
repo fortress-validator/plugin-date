@@ -10,11 +10,11 @@ export interface BeforeRuleArguments extends RuleArguments {
   strict?: boolean;
 }
 
-const before: Rule<BeforeRuleArguments> = ({ date, format, strict = true }) => (input: unknown) => {
+const beforeRule: Rule<BeforeRuleArguments> = ({ date, format, strict = true }) => (input: unknown) => {
   if (isEmpty(input)) return false;
   if (!validateDate({ format, strict })(date)) throw new Error('Invalid date');
   if (!validateDate({ format, strict })(input)) return false;
   return dayjs(String(input)).isBefore(date);
 };
 
-export default before;
+export default beforeRule;

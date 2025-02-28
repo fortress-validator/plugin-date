@@ -10,11 +10,11 @@ export interface AfterRuleArguments extends RuleArguments {
   strict?: boolean;
 }
 
-const after: Rule<AfterRuleArguments> = ({ date, format, strict = true }) => (input: unknown) => {
+const afterRule: Rule<AfterRuleArguments> = ({ date, format, strict = true }) => (input: unknown) => {
   if (isEmpty(input)) return false;
   if (!validateDate({ format, strict })(date)) throw new Error('Invalid date');
   if (!validateDate({ format, strict })(input)) return false;
   return dayjs(String(input)).isAfter(date);
 };
 
-export default after;
+export default afterRule;

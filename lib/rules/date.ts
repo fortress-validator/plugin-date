@@ -7,9 +7,9 @@ export interface DateRuleArguments extends RuleArguments {
   strict?: boolean;
 }
 
-const date: Rule<DateRuleArguments> = ({ format, strict = true }) => (input: unknown) => {
+const dateRule: Rule<DateRuleArguments> = ({ format, strict = true }) => (input: unknown) => {
   if (isEmpty(input)) return false;
   return dayjs(String(input), format, strict).isValid();
 };
 
-export default date;
+export default dateRule;
